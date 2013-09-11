@@ -5,14 +5,18 @@ Tarea #5 del curso de sistemas embebidos
 
 Gente ya esta funcionando solo falta que funcione para la beagle.
 
-- Si quieren correrlo para su PC ponen:
-make x86
-./reproductor_mp3 cansion.pm3
+Para correrlo primero digite en consola:
+- /opt/gstreamer-sdk/bin/gst-sdk-shell
+
+luego:
+- Si quieren correrlo para su PC:
+make
+sudo ./reproductor_mp3 cansion.pm3
 
 
-- Si quieren correrlo para la Beagle ponen:
+- Si quieren correrlo para la Beagle:
 make xBB
-./reproductor_mp3 cansion.pm3
+sudo ./reproductor_mp3 cansion.pm3
 
 Nota: 
 Tomen en cuenta que para este caso en el makefile el CROSS_COMPILE este hecho para mi compu, osea en el path 
