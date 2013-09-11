@@ -7,16 +7,11 @@ LIB= `pkg-config --cflags --libs gstreamer-0.10`
 
 all: $(APP)
 
-$(APP): $(OBJ)
-		$(CROSS_COMPILE)$(CC) -o $(APP) $(OBJ)
-
-$(OBJ): $(SRC)
-		$(CROSS_COMPILE)$(CC) -c $(SRC) $(LIB)
+$(APP):
+		$(CC) -o $(APP) $(SRC) $(LIB)
 
 xBB: 
 		$(CROSS_COMPILE)$(CC) -o $(APP) $(SRC) $(LIB)
 
-x86: 
-		$(CC) -o $(APP) $(SRC) $(LIB)
 clean:
 		rm $(APP) #$(OBJ)
