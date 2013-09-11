@@ -10,12 +10,16 @@ Para correrlo primero digite en consola:
 
 luego:
 - Si quieren correrlo para su PC:
+
 make
+
 sudo ./reproductor_mp3 cansion.pm3
 
 
 - Si quieren correrlo para la Beagle:
+
 make xBB
+
 sudo ./reproductor_mp3 cansion.pm3
 
 Nota: 
