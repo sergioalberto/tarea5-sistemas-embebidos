@@ -4,6 +4,7 @@
 // connection
 //
 // Author: Sergio Gonzalez Q, Luis Carrillo, Angel 
+// Codigo tomado de: http://gstreamer.freedesktop.org/data/doc/gstreamer/head/manual/html/chapter-helloworld.html
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
