@@ -25,14 +25,14 @@
 #ifndef _REPRODUCIR_MP3_H_
 #define _REPRODUCIR_MP3_H_
 
-  GMainLoop *loop;
+	GMainLoop *loop;
 
-  GstElement *pipeline, *source, *demuxer, *decoder, *conv, *sink;
-  GstBus *bus;
-  guint bus_watch_id;
+	GstElement *pipeline, *source, *demuxer, *decoder, *conv, *sink;
+	GstBus *bus;
+	guint bus_watch_id;
 
-  void play(char *name);
-  static void on_pad_added (GstElement *element, GstPad *pad, gpointer data);
-  static gboolean bus_call (GstBus *bus, GstMessage *msg, gpointer data);
+	void play(char *name);
+	static void on_pad_added (GstElement *element, GstPad *pad, gpointer data);
+	static gboolean bus_call (GstBus *bus, GstMessage *msg, gpointer data);
 
 #endif /* _REPRODUCIR_MP3_H_ */
