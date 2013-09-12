@@ -1,0 +1,68 @@
+timeout 300
+verbose on
+
+expect {
+    "stop autoboot:"
+}
+send ""
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv bootdelay 3"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv baudrate 115200"
+
+expect {
+    "ENTER ..."
+}
+send ""
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv serverip 172.18.81.205"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+
+send "setenv ipaddr 172.18.82.79"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv oldbootargs $\{bootargs\}"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv bootargs console=ttyO2,115200n8 rw noinitrd \c"
+send "root=/dev/nfs nfsroot=\c"
+send "${serverip}:\c"
+send "/home/sergio/ti-sdk-beagleboard-06.00.00.00/targetNFS\c"
+send ",nolock,rsize=1024,wsize=1024 \c"
+send "vram=12M omapfb.mode=dvi:640x480MR-16@60 omapdss.def_disp=dvi \c"
+send "ip=${ipaddr}"
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv oldbootcmd $\{bootcmd\}"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "setenv bootcmd 'mmc rescan 0;fatload mmc 0 0x82000000 uImage;bootm 0x82000000'"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+send "saveenv"
+
+expect {
+    "OMAP3 beagleboard.org #"
+}
+
